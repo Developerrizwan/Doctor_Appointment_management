@@ -16,3 +16,69 @@
 ::-webkit-scrollbar{
     @apply hidden
 }
+
+/* ---------------------------------------------------------------------------
+   Dark mode. Toggling `.dark` on <html> re-themes the whole app by remapping
+   the common Tailwind surface/text/border colors used across components.
+   Accent colors (blue/red/green/primary) are intentionally left untouched.
+--------------------------------------------------------------------------- */
+html.dark body {
+    background-color: #0b1120;
+    color: #e2e8f0;
+}
+
+/* Surfaces */
+.dark .bg-white { background-color: #1e293b !important; }
+.dark .bg-gray-50 { background-color: #0f172a !important; }
+.dark .bg-gray-100 { background-color: #334155 !important; }
+.dark .bg-stone-100 { background-color: #334155 !important; }
+.dark .bg-stone-50 { background-color: #1e293b !important; }
+.dark .bg-blue-50 { background-color: #172033 !important; }
+
+/* Text */
+.dark .text-black,
+.dark .text-gray-900,
+.dark .text-gray-800,
+.dark .text-neutral-800,
+.dark .text-zinc-700,
+.dark .text-neutral-700 { color: #f1f5f9 !important; }
+
+.dark .text-gray-700,
+.dark .text-gray-600,
+.dark .text-zinc-600,
+.dark .text-neutral-600,
+.dark .text-stone-600 { color: #cbd5e1 !important; }
+
+.dark .text-gray-500,
+.dark .text-gray-400,
+.dark .text-neutral-500,
+.dark .text-zinc-400,
+.dark .text-stone-500 { color: #94a3b8 !important; }
+
+/* Borders */
+.dark .border,
+.dark .border-t,
+.dark .border-b,
+.dark .border-gray-200,
+.dark .border-gray-300,
+.dark .border-gray-400,
+.dark .border-zinc-300,
+.dark .border-blue-200 { border-color: #334155 !important; }
+
+/* Form controls */
+.dark input,
+.dark select,
+.dark textarea {
+    background-color: #0f172a !important;
+    color: #e2e8f0 !important;
+    border-color: #334155 !important;
+}
+.dark input::placeholder,
+.dark textarea::placeholder { color: #64748b !important; }
+
+/* Table header rows */
+.dark thead.bg-gray-50 tr,
+.dark .bg-gray-50 { background-color: #0f172a !important; }
+
+/* Smooth transition when switching themes */
+body, .bg-white, .border { transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
